@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rekomendasi Shopee</title>
+<meta name="description" content="Kumpulan rekomendasi produk pilihan di Shopee.">
+<link rel="canonical" href="https://workemailnovita-hub.github.io/rekomendasi/">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f6f6f7;color:#1c1c1e;line-height:1.5}
+header,main{max-width:1100px;margin:0 auto;padding:16px}
+h1{margin:8px 0}
+.social a{margin-right:12px;color:#d0401b}
+#q{width:100%;padding:12px;font-size:1rem;border:1px solid #ccc;border-radius:8px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.12);display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#eee;display:block}
+.card .body{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.no{font-size:.85rem;color:#666}
+.card a.title{color:inherit;text-decoration:none;font-weight:600}
+.btn{display:inline-block;margin-top:auto;padding:10px 14px;background:#ee4d2d;color:#fff;text-decoration:none;border-radius:8px;text-align:center;font-weight:600}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+<h1>Rekomendasi Shopee</h1>
+<p class="social"><a href="https://web.facebook.com/katalog.solutif" rel="noopener" target="_blank">Facebook</a><a href="https://www.instagram.com/katalog.solutif?fbclid=IwY2xjawVpbrNleHRuA2FlbQIxMABwZG9mBGJyaWQRMWx6Q05xUTZSZ1ZyOXJnOVhzcnRjBmFwcF9pZA81MTQ3NzE1NjkyMjgwNjEAAR8hAxKr7lEgNLiEtlXh3jvXqmDzGgpdkAjpzaWgvqINfoMKbnY_J9zwIFptfg_aem__arxuoK-Xvd9GLgsmW22Ow" rel="noopener" target="_blank">Instagram</a></p>
+
+<input id="q" type="search" placeholder="Cari nama produk atau nomor" aria-label="Cari produk" autocomplete="off">
+</header>
+<main>
+<div class="grid" id="grid">
+<article class="card" data-search="#001 ivogry serum ketombe herbal 55ml">
+<a href="001-ivogry-serum-ketombe-herbal-55ml/"><img src="images/001-1.jpg" alt="Ivogry Serum Ketombe Herbal 55ml" loading="lazy"></a>
+<div class="body">
+<span class="no">#001</span>
+<a class="title" href="001-ivogry-serum-ketombe-herbal-55ml/">Ivogry Serum Ketombe Herbal 55ml</a>
+<a class="btn" href="https://s.shopee.co.id/1C27Mosaq" rel="sponsored nofollow noopener" target="_blank">Beli di Shopee</a>
+</div>
+</article>
+</div>
+<p id="empty" class="hidden">Produk tidak ditemukan.</p>
+</main>
+<script>
+(function(){
+var q=document.getElementById("q"),cards=document.querySelectorAll("#grid .card"),empty=document.getElementById("empty");
+q.addEventListener("input",function(){
+var t=q.value.trim().toLowerCase().replace(/^#/,""),shown=0;
+cards.forEach(function(c){var m=!t||c.getAttribute("data-search").indexOf(t)!==-1;c.classList.toggle("hidden",!m);if(m)shown++;});
+empty.classList.toggle("hidden",shown!==0);
+});
+})();
+</script>
+</body>
+</html>
